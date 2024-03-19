@@ -1,8 +1,8 @@
-package leetcode;
+package leetcode.twosum;
 
 import java.util.Arrays;
 
-public class twosum {
+public class TwoSumBruteForce {
 //leetcode challenge 01. Two Sum
 //    https://leetcode.com/problems/two-sum/description/
 //    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -11,11 +11,11 @@ public class twosum {
 
     public static void main(String[] args) {
         int[] nums = {1,3,4,2};
-        final int[] response = twoSumBruteForce(nums, 6);
+        final int[] response = twoSum(nums, 6);
         System.out.println("Result: " + Arrays.toString(response));
     }
 
-    public static int[] twoSumBruteForce( int[] nums, int target){
+    public static int[] twoSum(int[] nums, int target){
         final int length = nums.length;
         for (int i = 0; i < length -1; i++ ){
             int n1 = nums[i];
