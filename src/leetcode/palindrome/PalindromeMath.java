@@ -13,6 +13,5 @@ public class PalindromeMath {
             x=x/10;
         }
         return rev==original;
-
     }
 }
