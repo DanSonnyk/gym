@@ -1,23 +1,14 @@
 package leetcode.romantointeger;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class NihaarikaCode {
 
     public static void main(String[] args) {
-        System.out.println(romanToInt("IV"));
-//        System.out.println(romanToInt("V"));
-//        System.out.println(romanToInt("X"));
-//        System.out.println(romanToInt("L"));
-//        System.out.println(romanToInt("C"));
-//        System.out.println(romanToInt("D"));
-//        System.out.println(romanToInt("M"));
-//        System.out.println(romanToInt("IV"));
-//        System.out.println(romanToInt("IX"));
-//        System.out.println(romanToInt("XC"));
-//        System.out.println(romanToInt("CM"));
-//        System.out.println(romanToInt("MCMXCIV"));
+        String[] romanNumerals = {"MCDLXXVI","XL", "V", "X", "L", "C", "D", "M", "IV", "IX", "XC", "CM", "MCMXCIV"};
+        Arrays.stream(romanNumerals).forEach(s -> System.out.println(romanToInt(s)));
     }
 
     public static int romanToInt(String s) {

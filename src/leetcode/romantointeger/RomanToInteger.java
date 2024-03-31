@@ -1,12 +1,11 @@
 package leetcode.romantointeger;
 
+import java.util.Arrays;
+
 public class RomanToInteger {
     public static void main(String[] args) {
-        String[] romanAlgarisms = {"III", "V", "X", "L", "C", "D", "M", "IV", "IX", "XC", "CM", "MCMXCIV"};
-
-        for (String r : romanAlgarisms) {
-            System.out.println(romanToInt(r));
-        }
+        String[] romanNumerals = {"MCDLXXVI","XL", "V", "X", "L", "C", "D", "M", "IV", "IX", "XC", "CM", "MCMXCIV"};
+        Arrays.stream(romanNumerals).forEach(s -> System.out.println(romanToInt(s)));
     }
     public static int romanToInt(String s) {
         char[] rs = s.toCharArray();
@@ -14,13 +13,9 @@ public class RomanToInteger {
         String[] ri = new String[length];
 
         for (int i = 0; i < length; i++) {
-            if (isCandidate(rs[i]) && i + 1 < length) {
+            if (isCandidate(rs, i)) {
                 ri[i] = returnNumberC(rs, i);
-                if (!ri[i].isEmpty()) {
                     i++;
-                } else {
-                    ri[i] = returnNumber(rs[i]);
-                }
             } else {
                 ri[i] = returnNumber(rs[i]);
             }
@@ -52,25 +47,29 @@ public class RomanToInteger {
         };
     }
 
-    private static boolean isCandidate(char r) {
-        return r == 'C' || r == 'X' || r == 'I';
+    private static boolean isCandidate(char[] rs, int i) {
+        String[] cs = {"CM","CD","XC", "XL", "IX", "IV"};
+
+        char r = rs[i];
+        if(i + 1 < rs.length){
+            String next = rs[i] +String.valueOf(rs[i+1]);
+            if(r != rs[i+1] && Arrays.asList(cs).contains(next)){
+                return (r == 'C') || (r == 'X') || ((r == 'I'));
+            }
+        }
+        return false;
     }
 
     private static String returnNumberC(char[] rs, int i) {
-        String[] cs = {"CM", "XC", "IX", "IV"};
-        String cc = String.valueOf(rs[i]) + (i + 1 < rs.length ? String.valueOf(rs[i + 1]) : "");
-
-        for (String c : cs) {
-            if (cc.equals(c)) {
-            return switch (c) {
+        String cc = rs[i] + String.valueOf(rs[i + 1]);
+            return switch (cc) {
                     case "CM" -> "900";
+                    case "CD" -> "400";
                     case "XC" -> "90";
+                    case "XL" -> "40";
                     case "IX" ->"9";
                     case "IV" ->"4";
                     default -> "";
                 };
-            }
-        }
-        return "";
     }
 }
