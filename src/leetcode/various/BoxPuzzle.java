@@ -63,8 +63,7 @@ public class BoxPuzzle {
 
     public static String solve(int width, int height, int nbBlocks, String[] grid){
         String[][] puzzle = new String[width][height];
-
-
+        String name = "DanielSimiaodaSilva";
 
         return "";
     }
