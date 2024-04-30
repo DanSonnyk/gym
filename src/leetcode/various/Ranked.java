@@ -27,7 +27,7 @@ public class Ranked {
         for (int ps : player) {
             ranked.addLast(ps);
             int[][] scorePosition = new int[ranked.size()][2];
-
+            result.add(0);
             ranked.sort(Collections.reverseOrder());
             int l = 0;
             int p = 1;

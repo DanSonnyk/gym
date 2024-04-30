@@ -37,7 +37,6 @@ public class AlbayCheckout {
         List<Integer> seatedGuests = new LinkedList<>();
         List<Integer> waitingList = new LinkedList<>();
         int gains = 0;
-
         for (int guestId : guestMovements) {
             // if this is guestId's arrival
             if (!seatedGuests.contains(guestId) && !waitingList.contains(guestId)) {
