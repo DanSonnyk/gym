@@ -1,4 +1,4 @@
-package leetcode.fundamentals;
+package fundamentals;
 
 
 import java.util.List;

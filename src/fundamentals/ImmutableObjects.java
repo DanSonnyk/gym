@@ -1,4 +1,4 @@
-package leetcode.fundamentals;
+package fundamentals;
 
 public class ImmutableObjects {
     public static void main(String[] args) {

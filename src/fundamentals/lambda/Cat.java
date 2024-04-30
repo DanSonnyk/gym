@@ -1,4 +1,4 @@
-package leetcode.fundamentals.lambda;
+package fundamentals.lambda;
 
 public class Cat implements Felines{
     @Override

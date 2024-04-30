@@ -1,4 +1,4 @@
-package leetcode.fundamentals;
+package fundamentals;
 // Let's consider an e-commerce application where customers can place orders for various products. When a customer
 // places an order, the application needs to perform various tasks asynchronously to process the order efficiently.
 // Here's how the asynchronousMethodsExample() method could be applied in such a scenario:

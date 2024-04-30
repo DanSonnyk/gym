@@ -1,4 +1,4 @@
-package leetcode.fundamentals.lambda;
+package fundamentals.lambda;
 
 public class Execute {
     //Basics Lambda its pass the implementation of interface contract directly

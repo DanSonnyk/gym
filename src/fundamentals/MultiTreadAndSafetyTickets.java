@@ -1,6 +1,4 @@
-package leetcode.fundamentals;
-
-import leetcode.various.JavaConcepts;
+package fundamentals;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
