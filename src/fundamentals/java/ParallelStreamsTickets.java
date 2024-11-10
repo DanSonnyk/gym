@@ -4,6 +4,7 @@ package fundamentals.java;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Timer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 //Given you need apply a process to a large list of elements, you can parallelize the process
@@ -26,6 +27,7 @@ public class ParallelStreamsTickets {
     }
 
     private static boolean isPrime(int n) {
+        System.out.println(Thread.currentThread().getName());
         if (n <= 1) return false;
         for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) return false;

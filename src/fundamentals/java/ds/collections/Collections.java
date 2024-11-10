@@ -1,7 +1,5 @@
 package fundamentals.java.ds.collections;
 
-import org.junit.Test;
-
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -12,30 +10,29 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
 
 public class Collections {
 
-    @Test
    public void allTests() {
-        //Collection Interface Implementations
+  //Collection Interface Implementations
             treeSet(); //ordered
-            priorityQueue(); //ordered
-            list(); //ordered of insert
-            arrayList(); //ordered of insert
-            linkedList(); //ordered of insert (place at the end)
-            vector(); //ordered of insert
-            arrayDeque(); //ordered of insert
+//            priorityQueue(); //ordered
+//            list(); //ordered of insert
+//            arrayList(); //ordered of insert
+//            linkedList(); //ordered of insert (place at the end)
+//            vector(); //ordered of insert
+//            arrayDeque(); //ordered of insert
             linkedHashSet(); //ordered of insert
-            SortedSet(); //ascending ordered
-            queue(); //FIFO
-            stack(); //LIFO
-            dequeue(); //LIFO
-            hashSet(); //unordered
-            set(); //unordered
-
-//            //Map Interface Implementations:
+//            SortedSet(); //ascending ordered
+//            queue(); //FIFO
+//            stack(); //LIFO
+//            dequeue(); //LIFO
+              hashSet(); //unordered
+//            set(); //unordered
+//
+////            //Map Interface Implementations:
             hashMap(); //unordered
-            treeMap(); //ordered
-            SortedMap(); //ascending ordered
-            linkedHashMap(); //ordered of insert
-            hashTable(); //unordered
+//            treeMap(); //ordered
+//            SortedMap(); //ascending ordered
+//            linkedHashMap(); //ordered of insert
+//            hashTable(); //unordered
     }
 
     private static void hashTable() {
@@ -120,6 +117,19 @@ public class Collections {
         sessionInfo.put("uuid123","CartId123123");
         sessionInfo.put("uuid334","CartId13242");
         sessionInfo.put("uuid234","CartId5434");
+
+        //ComputeIfAbsent method
+
+        Map<String, List<String>> brands = new HashMap<>();
+        String[] produtos = {"roller", "skate", "roller", "ScooterBR", "skate"};
+
+        for (String p : produtos){
+            if(brands.containsKey(p)){
+                brands.get(p).add(p);
+            }
+            brands.put(p, new ArrayList<>(List.of(p)));
+        }
+        System.out.println(java.util.Collections.unmodifiableMap(brands));
     }
 
     private static void stack() {
@@ -146,7 +156,6 @@ public class Collections {
         redo.add(undo.pop());
     }
 
-    @Test
     public void vector() {
         //Synchronized resizable array implementation of the List interface.
         //Thread-safe - Allows null elements - Allows duplicate elements - maintains the order they were inserted
@@ -189,10 +198,9 @@ public class Collections {
         songsName.forEach(System.out::println); //  Believe in myself
     }
 
-    @Test
     public void linkedList() {
         // Doubly-linked list implementation of the List interface.  maintains the insertion order of elements at the end of list, accepts null values.
-        // Example: Implementing a playlist songs where you can add and delete, the best choice to insertions and deletions.
+        // Example: List of jobs to be executed in the order that was added
         LinkedList<String> jobsToRun = new LinkedList<>();
         jobsToRun.add("For un the bell tolls - Metallica");
         jobsToRun.add("City of Rock - Kiss");
